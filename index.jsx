@@ -19,7 +19,11 @@ import ErrorElement from "./pages/ErrorElement";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" errorElement={<ErrorElement />} element={<Layout />}>
+    <Route
+      path="/anime-app"
+      errorElement={<ErrorElement />}
+      element={<Layout />}
+    >
       <Route index loader={loaderHome} element={<Home />} />
       <Route path="animes" loader={loaderAnimes} element={<Animes />} />
       <Route path="mangas" loader={loaderMangas} element={<Mangas />} />
