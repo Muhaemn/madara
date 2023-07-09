@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function pagination({ curentPage, lastPage, to }) {
+export default function pagination({ curentPage, lastPage }) {
   const pages = [];
   const [params] = useSearchParams();
   function searchParams(key, value) {
@@ -24,11 +24,7 @@ export default function pagination({ curentPage, lastPage, to }) {
         (curentPage == 1 ? "cursor-not-allowed text-gray-500" : "")
       }
       key={lastPage + 1}
-      to={
-        "/" +
-        to +
-        searchParams("page", curentPage == 1 ? curentPage : curentPage - 1)
-      }
+      to={searchParams("page", curentPage == 1 ? curentPage : curentPage - 1)}
     >
       {"<"}
     </Link>
@@ -43,7 +39,7 @@ export default function pagination({ curentPage, lastPage, to }) {
             (curentPage == i ? "bg-gray-700" : "bg-gray-900")
           }
           key={i}
-          to={"/" + to + searchParams("page", i)}
+          to={searchParams("page", i)}
         >
           {i}
         </Link>
@@ -60,7 +56,7 @@ export default function pagination({ curentPage, lastPage, to }) {
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
-            to={"/" + to + searchParams("page", i)}
+            to={searchParams("page", i)}
           >
             {i}
           </Link>
@@ -72,7 +68,7 @@ export default function pagination({ curentPage, lastPage, to }) {
           onClick={scrollTop}
           className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={lastPage}
-          to={"/" + to + searchParams("page", lastPage)}
+          to={searchParams("page", lastPage)}
         >
           {lastPage}
         </Link>
@@ -83,7 +79,7 @@ export default function pagination({ curentPage, lastPage, to }) {
           onClick={scrollTop}
           className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={1}
-          to={"/" + to + searchParams("page", 1)}
+          to={searchParams("page", 1)}
         >
           {1}
         </Link>
@@ -98,7 +94,7 @@ export default function pagination({ curentPage, lastPage, to }) {
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
-            to={"/" + to + searchParams("page", i)}
+            to={searchParams("page", i)}
           >
             {i}
           </Link>
@@ -110,7 +106,7 @@ export default function pagination({ curentPage, lastPage, to }) {
           onClick={scrollTop}
           className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={lastPage}
-          to={"/" + to + searchParams("page", lastPage)}
+          to={searchParams("page", lastPage)}
         >
           {lastPage}
         </Link>
@@ -121,7 +117,7 @@ export default function pagination({ curentPage, lastPage, to }) {
           onClick={scrollTop}
           className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={1}
-          to={"/" + to + searchParams("page", 1)}
+          to={searchParams("page", 1)}
         >
           {1}
         </Link>
@@ -136,7 +132,7 @@ export default function pagination({ curentPage, lastPage, to }) {
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
-            to={"/" + to + searchParams("page", i)}
+            to={searchParams("page", i)}
           >
             {i}
           </Link>
@@ -152,14 +148,10 @@ export default function pagination({ curentPage, lastPage, to }) {
         (curentPage == lastPage ? "cursor-not-allowed text-gray-500" : "")
       }
       key={lastPage + 2}
-      to={
-        "/" +
-        to +
-        searchParams(
-          "page",
-          curentPage == lastPage ? curentPage : curentPage + 1
-        )
-      }
+      to={searchParams(
+        "page",
+        curentPage == lastPage ? curentPage : curentPage + 1
+      )}
     >
       {">"}
     </Link>

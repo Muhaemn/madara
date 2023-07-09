@@ -9,7 +9,7 @@ export default function Layout() {
     <>
       <nav className="flex justify-between items-center px-10 py-4 bg-gray-950 bg-opacity-50 text-white flex-col md:flex-row gap-5 w-full">
         <h1 className=" text-2xl">
-          <Link to="/">
+          <Link to="">
             <img
               src={logo}
               alt="logo"
@@ -19,7 +19,7 @@ export default function Layout() {
         </h1>
         <ul className=" flex justify-between text-lg items-center gap-6">
           <li className=" list-none">
-            <Link to="/">Home</Link>
+            <Link to="">Home</Link>
           </li>
           <li
             onClick={() => setAnime((prev) => !prev)}
@@ -32,7 +32,7 @@ export default function Layout() {
                 (anime ? "flex" : "hidden")
               }
             >
-              <Link to="/animes">All Animes</Link>
+              <Link to="animes">All Animes</Link>
               <Link to="top/animes">Top Animes</Link>
             </div>
             <svg
@@ -65,7 +65,7 @@ export default function Layout() {
                 (manga ? "flex" : "hidden")
               }
             >
-              <Link to="/mangas">All Mangas</Link>
+              <Link to="mangas">All Mangas</Link>
               <Link to="top/mangas">Top Mangas</Link>
             </div>
             <svg
@@ -88,7 +88,7 @@ export default function Layout() {
             </svg>
           </li>
           <li className=" list-none">
-            <Link to="/season">Season</Link>
+            <Link to="season">Season</Link>
           </li>
         </ul>
         <div className="flex justify-between items-center gap-4">

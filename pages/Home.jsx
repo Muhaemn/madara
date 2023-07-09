@@ -5,7 +5,6 @@ import { random, season, top } from "../api";
 import CardSlide from "../components/CardSlide";
 import CardSlideSkeleton from "../skeleton/CardSlideSkeleton";
 import HeroSkeleton from "../skeleton/HeroSkeleton";
-import SlideTest from "../components/SlideTest";
 
 export function loader({ request }) {
   const pathname = new URL(request.url).searchParams;
@@ -22,11 +21,6 @@ export default function Home() {
   const data = useLoaderData();
   return (
     <div className="p-5 md:p-10 grid grid-cols-1 gap-10">
-      {/* <Suspense fallback={<CardSlideSkeleton />}>
-        <Await resolve={data.seasonAnime}>
-          {(d) => <SlideTest data={d.data} title="season" />}
-        </Await>
-      </Suspense> */}
       <Suspense fallback={<HeroSkeleton />}>
         <Await resolve={data.randomAnime}>
           {(randomAnime) => {

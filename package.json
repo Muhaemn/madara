@@ -1,6 +1,6 @@
 {
   "name": "project",
-  "homepage": "https://muhaemn.github.io/anime-app/",
+  "homepage": "https://muhaemn.github.io/madara/",
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@material-tailwind/react": "^2.0.4",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function Filter({ from, title, filterData }) {
+export default function Filter({ title, filterData }) {
   const [params, setParams] = useSearchParams();
   const [show, setShow] = useState(false);
   function searchParams(key, value) {
@@ -19,7 +19,7 @@ export default function Filter({ from, title, filterData }) {
       <Link
         key={i}
         onClick={() => setShow(false)}
-        to={"/" + from + searchParams(title, e.mal_id)}
+        to={searchParams(title, e.mal_id)}
         className="m-1 p-3 rounded-md hover:bg-gray-700 transition-all ease-in-out duration-300"
       >
         {e.name}
@@ -31,7 +31,7 @@ export default function Filter({ from, title, filterData }) {
       <Link
         key={filters.length + 1}
         onClick={() => setShow(false)}
-        to={"/" + from + searchParams(title, null)}
+        to={searchParams(title, null)}
         className="m-1 p-3 rounded-md hover:bg-gray-700 transition-all ease-in-out duration-300"
       >
         Clear

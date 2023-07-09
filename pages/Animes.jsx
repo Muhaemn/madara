@@ -63,18 +63,12 @@ export default function Animes() {
   return (
     <div className="text-white mt-10">
       <div className="px-5 md:px-10 flex justify-between flex-col md:flex-row items-stretch gap-5 mb-4">
-        <Filter title="type" from="animes" filterData={typeData} />
-        <Filter title="status" from="animes" filterData={statusData} />
-        <Filter title="rating" from="animes" filterData={ratingData} />
-        <Suspense
-          fallback={
-            <Filter title="genres" from="animes" filterData={typeData} />
-          }
-        >
+        <Filter title="type" filterData={typeData} />
+        <Filter title="status" filterData={statusData} />
+        <Filter title="rating" filterData={ratingData} />
+        <Suspense fallback={<Filter title="genres" filterData={typeData} />}>
           <Await resolve={data.genreData}>
-            {(genreData) => (
-              <Filter title="genres" from="animes" filterData={genreData} />
-            )}
+            {(genreData) => <Filter title="genres" filterData={genreData} />}
           </Await>
         </Suspense>
       </div>
