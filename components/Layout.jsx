@@ -19,7 +19,7 @@ export default function Layout() {
         </h1>
         <ul className=" flex justify-between text-lg items-center gap-6">
           <li className=" list-none">
-            <Link to="">Home</Link>
+            <Link to="">Home page</Link>
           </li>
           <li
             onClick={() => setAnime((prev) => !prev)}
