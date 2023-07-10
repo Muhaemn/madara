@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function Filter({ title, filterData }) {
-  const [params, setParams] = useSearchParams();
+function useOutsideAlerter(ref) {
   const [show, setShow] = useState(false);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShow(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+  return [show, setShow];
+}
+
+export default function Filter({ title, filterData }) {
+  const [params] = useSearchParams();
+  const wrapperRef = useRef(null);
+  const [show, setShow] = useOutsideAlerter(wrapperRef);
   function searchParams(key, value) {
     const sp = new URLSearchParams(params);
     sp.delete("page");
@@ -38,8 +56,9 @@ export default function Filter({ title, filterData }) {
       </Link>
     );
   }
+
   return (
-    <div className="w-full">
+    <div ref={wrapperRef} className="w-full">
       <button
         className=" relative group bg-transparent w-full border-b-2 border-gray-900  focus:border-gray-700 transition-all ease-in-out duration-300"
         onClick={() => setShow((prev) => !prev)}

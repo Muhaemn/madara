@@ -1,27 +1,34 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, Outlet, useSearchParams, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
+import DropDown from "./DropDown";
 
 export default function Layout() {
-  const [anime, setAnime] = useState(false);
-  const [manga, setManga] = useState(false);
   const [search, setSearch] = useState("");
   const [params] = useSearchParams();
   const inputRef = useRef(null);
   const navigate = useNavigate();
+
   useEffect(() => {
+    if (params.has("q")) {
+      setSearch(params.get("q"));
+    } else {
+      setSearch("");
+    }
     const handlePress = (event) => {
       if (event.key === "/") {
         inputRef.current.focus();
       }
     };
     window.addEventListener("keyup", handlePress);
+
     return () => {
       window.removeEventListener("keyup", handlePress);
     };
-  }, []);
+  }, [params]);
   function handleKey(e) {
     if (e.key === "Enter") {
+      inputRef.current.blur();
       navigate(`/madara/animes${searchParams("q", search)}`);
     }
   }
@@ -88,72 +95,18 @@ export default function Layout() {
           <li className=" list-none">
             <Link to="">Home</Link>
           </li>
-          <li
-            onClick={() => setAnime((prev) => !prev)}
-            className="relative list-none flex items-center gap-2 cursor-pointer"
-          >
-            Animes
-            <div
-              className={
-                " bg-gray-900 max-h-[300px] border border-gray-950 text-base rounded-md no-scrollbar flex-col gap-2 items-stretch w-32 absolute p-2 z-50 top-8 " +
-                (anime ? "flex" : "hidden")
-              }
-            >
-              <Link to="animes">All Animes</Link>
-              <Link to="top/animes">Top Animes</Link>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={3}
-              stroke="currentColor"
-              className="w-3 h-3 -mb-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d={
-                  !anime
-                    ? "M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
-                    : "M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
-                }
-              />
-            </svg>
-          </li>
-          <li
-            onClick={() => setManga((prev) => !prev)}
-            className="relative list-none flex items-center gap-2 cursor-pointer"
-          >
-            Mangas
-            <div
-              className={
-                " bg-gray-900 max-h-[300px] border border-gray-950 text-base rounded-md no-scrollbar flex-col gap-2 items-stretch w-32 absolute p-2 z-50 top-8 " +
-                (manga ? "flex" : "hidden")
-              }
-            >
-              <Link to="mangas">All Mangas</Link>
-              <Link to="top/mangas">Top Mangas</Link>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={3}
-              stroke="currentColor"
-              className="w-3 h-3 -mb-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d={
-                  !manga
-                    ? "M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
-                    : "M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
-                }
-              />
-            </svg>
-          </li>
+          <DropDown
+            title="Animes"
+            l1="All Animes"
+            l2="Top Animes"
+            to="animes"
+          />
+          <DropDown
+            title="Mangas"
+            l1="All Mangas"
+            l2="Top Mangas"
+            to="mangas"
+          />
           <li className=" list-none">
             <Link to="season">Season</Link>
           </li>
