@@ -37,7 +37,7 @@ export default function TopAnimes() {
     const card = animeData.data.map((e, i) => {
       return (
         <Card
-          img={e?.images?.webp?.large_image_url}
+          img={e?.images?.jpg?.large_image_url}
           title={e.title}
           score={e.score}
           type={e.type}
