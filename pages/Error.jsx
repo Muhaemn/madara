@@ -14,7 +14,7 @@ export default function Example() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
-              to="/"
+              to=""
               className="rounded-md bg-gray-700 px-10 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 transition-all ease-in-out duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Go back home

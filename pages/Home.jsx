@@ -27,7 +27,7 @@ export default function Home() {
             if (randomAnime) {
               return (
                 <Hero
-                  img={randomAnime?.images?.jpg?.large_image_url}
+                  img={randomAnime?.images?.webp?.large_image_url}
                   title={randomAnime.title}
                   synopsis={
                     randomAnime.synopsis && randomAnime.synopsis.length > 300

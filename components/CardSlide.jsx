@@ -16,7 +16,7 @@ export default function cardSlide({ data, title, to }) {
     return (
       <li key={i}>
         <CardHome
-          img={e?.images?.jpg?.large_image_url}
+          img={e?.images?.webp?.large_image_url}
           title={e.title}
           score={e.score}
           type={e.type}
@@ -58,6 +58,7 @@ export default function cardSlide({ data, title, to }) {
           {cards}
         </ul>
         <button
+          name="previos"
           className={
             activePageIndex == 0
               ? "hidden"
@@ -84,6 +85,7 @@ export default function cardSlide({ data, title, to }) {
           </svg>
         </button>
         <button
+          name="next"
           className={
             activePageIndex == pages.length - 1
               ? "hidden"
