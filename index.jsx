@@ -7,7 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import Layout from "./components/layout";
+import Layout from "./components/Layout";
 import Home, { loader as loaderHome } from "./pages/Home";
 import Animes, { loader as loaderAnimes } from "./pages/Animes";
 import Mangas, { loader as loaderMangas } from "./pages/Mangas";
