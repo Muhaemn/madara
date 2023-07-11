@@ -6,7 +6,7 @@ export default function Hero({ img, title, synopsis, genre, id }) {
     <Link to={"animes/" + id}>
       <div className=" relative bg-gradient-to-b from-gray-900 to-gray-950 w-full min-h-[300px] rounded-md overflow-hidden flex items-center  text-white gap-5 justify-between flex-col md:flex-row md:bg-gradient-to-r border-2 border-gray-900">
         <img
-          className="rounded-md absolute opacity-50 w-full aspect-square	 md:w-auto object-contain overflow-hidden"
+          className="rounded-md absolute opacity-50 w-full md:aspect-square	 md:w-auto object-contain overflow-hidden"
           src={img}
           alt={title}
         />

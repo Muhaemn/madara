@@ -10,7 +10,6 @@ export function loader({ request }) {
   const pathname = new URL(request.url).searchParams;
   const params = pathname.toString();
   return defer({
-    randomAnime: random(),
     topAnime: top(params, "anime"),
     topManga: top(params, "manga"),
     seasonAnime: season(),
@@ -19,12 +18,16 @@ export function loader({ request }) {
 
 export default function Home() {
   const data = useLoaderData();
+  function getRandom() {
+    return Math.floor(Math.random() * 26);
+  }
   return (
     <div className="p-5 md:p-10 grid grid-cols-1 gap-10">
       <Suspense fallback={<HeroSkeleton />}>
-        <Await resolve={data.randomAnime}>
+        <Await resolve={data.seasonAnime}>
           {(randomAnime) => {
-            if (randomAnime) {
+            if (randomAnime && randomAnime?.data !== undefined) {
+              randomAnime = randomAnime?.data[getRandom()];
               return (
                 <Hero
                   id={randomAnime.mal_id}

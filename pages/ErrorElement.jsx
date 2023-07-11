@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Example() {
   return (
     <>
-      <main className="bg-gray-950 flex justify-center items-center h-3/4">
+      <main className="bg-gray-950 flex justify-center items-center h-[80vh]">
         <div className="text-center">
           <p className=" text-3xl font-bold text-white">
             Something wrong happened
