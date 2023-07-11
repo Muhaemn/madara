@@ -27,6 +27,7 @@ export default function Home() {
             if (randomAnime) {
               return (
                 <Hero
+                  id={randomAnime.mal_id}
                   img={randomAnime?.images?.webp?.large_image_url}
                   title={randomAnime.title}
                   synopsis={

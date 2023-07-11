@@ -42,6 +42,7 @@ export default function TopAnimes() {
           score={e.score}
           type={e.type}
           key={i}
+          id={e.mal_id}
         />
       );
     });

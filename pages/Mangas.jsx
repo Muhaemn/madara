@@ -51,6 +51,7 @@ export default function Mangas() {
           score={e.score}
           type={e.type}
           key={i}
+          id={e.mal_id}
         />
       );
     });

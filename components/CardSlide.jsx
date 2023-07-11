@@ -15,12 +15,14 @@ export default function cardSlide({ data, title, to }) {
   const cards = data.map((e, i) => {
     return (
       <li key={i}>
-        <CardHome
-          img={e?.images?.webp?.large_image_url}
-          title={e.title}
-          score={e.score}
-          type={e.type}
-        />
+        <Link to={to + "/" + e.mal_id + ""}>
+          <CardHome
+            img={e?.images?.webp?.large_image_url}
+            title={e.title}
+            score={e.score}
+            type={e.type}
+          />
+        </Link>
       </li>
     );
   });

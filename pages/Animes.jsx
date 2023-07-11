@@ -55,6 +55,7 @@ export default function Animes() {
           score={e.score}
           type={e.type}
           key={i}
+          id={e.mal_id}
         />
       );
     });

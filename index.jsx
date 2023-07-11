@@ -16,6 +16,12 @@ import TopAnimes, { loader as loaderTopAnimes } from "./pages/TopAnimes";
 import TopMangas, { loader as loaderTopMangas } from "./pages/TopMangas";
 import Error from "./pages/Error";
 import ErrorElement from "./pages/ErrorElement";
+import AnimeDetails, {
+  loader as loaderAnimeDetail,
+} from "./pages/AnimeDetails";
+import MangaDetails, {
+  loader as loaderMangaDetail,
+} from "./pages/MangaDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +33,32 @@ const router = createBrowserRouter(
       <Route path="top">
         <Route path="animes" loader={loaderTopAnimes} element={<TopAnimes />} />
         <Route path="mangas" loader={loaderTopMangas} element={<TopMangas />} />
+        <Route
+          path="animes/:id"
+          loader={loaderAnimeDetail}
+          element={<AnimeDetails />}
+        />
+        <Route
+          path="mangas/:id"
+          loader={loaderMangaDetail}
+          element={<MangaDetails />}
+        />
       </Route>
+      <Route
+        path="animes/:id"
+        loader={loaderAnimeDetail}
+        element={<AnimeDetails />}
+      />
+      <Route
+        path="mangas/:id"
+        loader={loaderMangaDetail}
+        element={<MangaDetails />}
+      />
+      <Route
+        path="season/:id"
+        loader={loaderAnimeDetail}
+        element={<AnimeDetails />}
+      />
       <Route path="*" element={<Error />} />
     </Route>
   )

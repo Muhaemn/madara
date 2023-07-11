@@ -31,6 +31,7 @@ export default function Season() {
           score={e.score}
           type={e.type}
           key={i}
+          id={e.mal_id}
         />
       );
     });
