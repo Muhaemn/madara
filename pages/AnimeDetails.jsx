@@ -1,14 +1,16 @@
 import React, { Suspense, useEffect } from "react";
 import { useLoaderData, Await, defer } from "react-router-dom";
-import { animeDetails, recommendation } from "../api";
+import { animeDetails, recommendation, characters } from "../api";
 import AnimeDetailsSkeleton from "../skeleton/AnimeDetailsSkeleton";
 import CardSlide from "../components/CardSlideRecommendation";
+import CardSlideCharacters from "../components/CardSlideCharacters";
 import CardSlideSkeleton from "../skeleton/CardSlideSkeleton";
 
 export async function loader({ params }) {
   return defer({
     animeDetail: animeDetails(params.id, "anime"),
     animeRecommendations: recommendation("anime", params.id),
+    animeCharacters: characters("anime", params.id),
   });
 }
 
@@ -133,6 +135,20 @@ export default function AnimeDetails() {
     <>
       <Suspense fallback={<AnimeDetailsSkeleton />}>
         <Await resolve={data.animeDetail}>{details}</Await>
+      </Suspense>
+      <Suspense fallback={<CardSlideSkeleton />}>
+        <Await resolve={data.animeCharacters}>
+          {(data) => {
+            if (data.length === 0) {
+              return "";
+            }
+            return (
+              <div className="p-5 md:p-10">
+                <CardSlideCharacters data={data} title="Characters" />
+              </div>
+            );
+          }}
+        </Await>
       </Suspense>
       <Suspense fallback={<CardSlideSkeleton />}>
         <Await resolve={data.animeRecommendations}>

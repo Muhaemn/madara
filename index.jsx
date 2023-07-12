@@ -22,6 +22,9 @@ import AnimeDetails, {
 import MangaDetails, {
   loader as loaderMangaDetail,
 } from "./pages/MangaDetails";
+import CharacterDetails, {
+  loader as loaderCharacterDetails,
+} from "./pages/CharacterDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -58,6 +61,11 @@ const router = createBrowserRouter(
         path="season/:id"
         loader={loaderAnimeDetail}
         element={<AnimeDetails />}
+      />
+      <Route
+        path="characters/:id"
+        loader={loaderCharacterDetails}
+        element={<CharacterDetails />}
       />
       <Route path="*" element={<Error />} />
     </Route>

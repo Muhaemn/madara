@@ -1,14 +1,16 @@
 import React, { Suspense, useEffect } from "react";
 import { useLoaderData, Await, defer } from "react-router-dom";
-import { animeDetails, recommendation } from "../api";
+import { animeDetails, recommendation, characters } from "../api";
 import AnimeDetailsSkeleton from "../skeleton/AnimeDetailsSkeleton";
 import CardSlide from "../components/CardSlideRecommendation";
 import CardSlideSkeleton from "../skeleton/CardSlideSkeleton";
+import CardSlideCharacters from "../components/CardSlideCharacters";
 
 export async function loader({ params }) {
   return defer({
     animeDetail: animeDetails(params.id, "manga"),
     animeRecommendations: recommendation("manga", params.id),
+    animeCharacters: characters("manga", params.id),
   });
 }
 
@@ -108,6 +110,24 @@ export default function MangaDetails() {
     <>
       <Suspense fallback={<AnimeDetailsSkeleton />}>
         <Await resolve={data.animeDetail}>{details}</Await>
+      </Suspense>
+      <Suspense fallback={<CardSlideSkeleton />}>
+        <Await resolve={data.animeCharacters}>
+          {(data) => {
+            if (data.length === 0) {
+              return "";
+            }
+            return (
+              <div className="p-5 md:p-10">
+                <CardSlideCharacters
+                  data={data}
+                  title="Characters"
+                  to={"/madara/animes"}
+                />
+              </div>
+            );
+          }}
+        </Await>
       </Suspense>
       <Suspense fallback={<CardSlideSkeleton />}>
         <Await resolve={data.animeRecommendations}>

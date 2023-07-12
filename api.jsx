@@ -33,3 +33,15 @@ export async function recommendation(type, id) {
   data = await data.json();
   return data.data;
 }
+export async function characters(type, id) {
+  const url = `https://api.jikan.moe/v4/${type}/${id}/characters`;
+  let data = await fetch(url);
+  data = await data.json();
+  return data.data;
+}
+export async function characterDetails(id) {
+  const url = `https://api.jikan.moe/v4/characters/${id}/full`;
+  let data = await fetch(url);
+  data = await data.json();
+  return data.data;
+}
