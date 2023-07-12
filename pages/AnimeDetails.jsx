@@ -1,10 +1,15 @@
 import React, { Suspense, useEffect } from "react";
 import { useLoaderData, Await, defer } from "react-router-dom";
-import { animeDetails } from "../api";
+import { animeDetails, recommendation } from "../api";
 import AnimeDetailsSkeleton from "../skeleton/AnimeDetailsSkeleton";
+import CardSlide from "../components/CardSlideRecommendation";
+import CardSlideSkeleton from "../skeleton/CardSlideSkeleton";
 
 export async function loader({ params }) {
-  return defer({ animeDetail: animeDetails(params.id, "anime") });
+  return defer({
+    animeDetail: animeDetails(params.id, "anime"),
+    animeRecommendations: recommendation("anime", params.id),
+  });
 }
 
 export default function AnimeDetails() {
@@ -29,6 +34,9 @@ export default function AnimeDetails() {
             src={animeDetail.images.webp.large_image_url}
             alt="img"
           />
+          <div className=" absolute h-[100vh] w-full">
+            <div className="w-full h-10 bg-gradient-to-b absolute z-[-9] bottom-0   from-transparent to-gray-950"></div>
+          </div>
         </div>
         <div className="p-10 text-white">
           <div className="flex justify-between items-center gap-5 flex-col md:flex-row-reverse">
@@ -39,36 +47,41 @@ export default function AnimeDetails() {
                 alt="img"
               />
             </div>
-            <div className="flex flex-col gap-5">
-              <h1 className="font-bold text-4xl">
+            <div className="flex flex-col gap-5 md:w-[50vw]">
+              <h1 className="font-bold text-4xl sm:text-5xl">
                 {animeDetail.title_english
                   ? animeDetail.title_english
                   : animeDetail.title}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Type: {animeDetail.type}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Type:</span> {animeDetail.type}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Source: {animeDetail.source ? animeDetail.source : "N/A"}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Source:</span>{" "}
+                {animeDetail.source ? animeDetail.source : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Status: {animeDetail.status ? animeDetail.status : "N/A"}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Status:</span>{" "}
+                {animeDetail.status ? animeDetail.status : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Epsodies: {animeDetail.episodes ? animeDetail.episodes : "N/A"}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Episodes:</span>{" "}
+                {animeDetail.episodes ? animeDetail.episodes : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Aired:{" "}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Aired:</span>{" "}
                 {animeDetail.aired.string ? animeDetail.aired.string : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Duration: {animeDetail.duration ? animeDetail.duration : "N/A"}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Duration:</span>{" "}
+                {animeDetail.duration ? animeDetail.duration : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Rating: {animeDetail.rating ? animeDetail.rating : "N/A"}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Rating:</span>{" "}
+                {animeDetail.rating ? animeDetail.rating : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Score:{" "}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Score:</span>{" "}
                 {animeDetail.score
                   ? animeDetail.score +
                     " from " +
@@ -76,8 +89,8 @@ export default function AnimeDetails() {
                     " Voiting"
                   : "N/A"}
               </h1>
-              <h1 className="text-md tracking-wider">
-                Geners:{" "}
+              <h1 className="text-lg tracking-wider">
+                <span className="font-bold">Genres:</span>{" "}
                 {genre(animeDetail.genres) ? genre(animeDetail.genres) : "N/A"}
               </h1>
               <a
@@ -90,10 +103,13 @@ export default function AnimeDetails() {
             </div>
           </div>
           <div className="w-full mt-10">
-            <h1 className="font-bold text-4xl my-5">About</h1>
-            <h1>{animeDetail.synopsis}</h1>
+            <h1 className="font-bold text-2xl sm:text-3xl my-5">About</h1>
+            <h1 className="text-lg tracking-wider">{animeDetail.synopsis}</h1>
           </div>
-          <div className="flex justify-center items-center mt-10">
+          <div className="flex justify-center flex-col items-center mt-10">
+            <h1 className="font-bold text-2xl sm:text-3xl my-5 self-start">
+              trailer
+            </h1>
             <iframe
               className="w-full aspect-video rounded-md"
               src={
@@ -114,8 +130,28 @@ export default function AnimeDetails() {
     );
   }
   return (
-    <Suspense fallback={<AnimeDetailsSkeleton />}>
-      <Await resolve={data.animeDetail}>{details}</Await>
-    </Suspense>
+    <>
+      <Suspense fallback={<AnimeDetailsSkeleton />}>
+        <Await resolve={data.animeDetail}>{details}</Await>
+      </Suspense>
+      <Suspense fallback={<CardSlideSkeleton />}>
+        <Await resolve={data.animeRecommendations}>
+          {(data) => {
+            if (data.length === 0) {
+              return "";
+            }
+            return (
+              <div className="p-10">
+                <CardSlide
+                  data={data}
+                  title="Recommendations"
+                  to={"/madara/animes"}
+                />
+              </div>
+            );
+          }}
+        </Await>
+      </Suspense>
+    </>
   );
 }

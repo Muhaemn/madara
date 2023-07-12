@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { useLoaderData, defer, Await } from "react-router-dom";
 import Hero from "../components/Hero";
-import { random, season, top } from "../api";
+import { season, top } from "../api";
 import CardSlide from "../components/CardSlide";
 import CardSlideSkeleton from "../skeleton/CardSlideSkeleton";
 import HeroSkeleton from "../skeleton/HeroSkeleton";

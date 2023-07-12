@@ -12,45 +12,26 @@ export default function cardSlide({ data, title, to }) {
   function scrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-  const cards = data.map((e, i) => {
-    return (
+  const cards = [];
+  const loop = data.length > 25 ? 25 : data.length;
+  for (let i = 0; i < loop; i++) {
+    cards.push(
       <li key={i}>
-        <Link to={to + "/" + e.mal_id + ""}>
+        <Link onClick={scrollTop} to={to + "/" + data[i]?.entry?.mal_id + ""}>
           <CardHome
-            img={e?.images?.webp?.large_image_url}
-            title={e.title}
-            score={e.score}
-            type={e.type}
+            img={data[i]?.entry?.images?.webp?.large_image_url}
+            title={data[i]?.entry.title}
+            score={""}
+            type={""}
           />
         </Link>
       </li>
     );
-  });
+  }
   return (
     <div className=" text-white">
       <div className="flex items-center justify-between mb-5 text-lg">
-        <h1 className="text-xl font-bold">{title}</h1>
-        <div className="flex justify-between gap-1 items-center">
-          <h1 className="text-base">
-            <Link onClick={scrollTop} to={to}>
-              See all
-            </Link>
-          </h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-3 h-3"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </div>
+        <h1 className="text-2xl sm:text-3xl font-bold">{title}</h1>
       </div>
       <div className=" relative overflow-hidden rounded-md">
         <ul
@@ -113,7 +94,7 @@ export default function cardSlide({ data, title, to }) {
             />
           </svg>
         </button>
-        <div className="text-white text-center mt-4 text-sm">
+        <div className="text-white text-center mt-4">
           {activePageIndex + 1} / {pages.length}
         </div>
       </div>
