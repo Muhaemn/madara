@@ -114,8 +114,10 @@ export default function Layout() {
       </nav>
       <Outlet />
       <footer className=" w-full  px-5 md:px-10  text-white">
-        <div className=" flex justify-center flex-col items-center rounded-t-[25px] w-full p-2 gap-2 bg-gray-900 ">
-          <code>Developed by Muhaemn</code>
+        <div className=" flex justify-center flex-col items-center rounded-t-[25px] w-full p-2 gap-1 bg-gray-900 ">
+          <code className="text-sm font-bold text-gray-400 sm:text-base">
+            Developed by Muhaemn
+          </code>
           <div className="flex items-center justify-center gap-5">
             <a
               href="https://www.instagram.com/_muhaemn/"
