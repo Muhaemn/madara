@@ -44,7 +44,7 @@ export default function Layout() {
   }
   return (
     <>
-      <nav className="flex justify-between items-center px-10 py-4 bg-gray-950 bg-opacity-50 text-white flex-col md:flex-row gap-5 md:gap-10 w-full">
+      <nav className="flex justify-between items-center px-10 py-4 bg-gray-950 bg-opacity-50 text-gray-400 flex-col md:flex-row gap-5 md:gap-10 w-full">
         <div className=" text-2xl">
           <Link to="">
             <img
@@ -85,7 +85,7 @@ export default function Layout() {
                   return e.target.value != "/" ? e.target.value : prev;
                 })
               }
-              className="py-2 text-sm w-full text-white min-w-[320px] md:min-w-full bg-gray-900 rounded-md px-10 focus:outline-none"
+              className="py-2 text-md w-full text-gray-400 min-w-[320px] md:min-w-full bg-gray-900 rounded-md px-10 focus:outline-none"
               placeholder="press / to focus"
               autoComplete="off"
             />
@@ -113,7 +113,7 @@ export default function Layout() {
         </ul>
       </nav>
       <Outlet />
-      <footer className=" w-full  px-5 md:px-10  text-white">
+      <footer className=" w-full  px-5 md:px-10 ">
         <div className=" flex justify-center items-center rounded-t-md w-full p-3 gap-2 bg-gray-900 ">
           <code className="text-xs font-bold text-gray-500 sm:text-base">
             Developed by Muhaemn

@@ -9,7 +9,7 @@ export default function Card({ img, title, score, type, id }) {
       ? "N/A"
       : title;
   return (
-    <div className=" relative overflow-hidden rounded-md w-full h-[500px] sm:w-[250px] sm:h-[380px] text-white bg-gradient-to-t from-gray-900 via-gray-950 to-gray-950 border-2 border-gray-900">
+    <div className=" relative overflow-hidden rounded-md w-full h-[500px] sm:w-[250px] sm:h-[380px] text-gray-400 bg-gradient-to-t from-gray-900 via-gray-950 to-gray-950 border-2 border-gray-900">
       <Link to={"" + id + ""}>
         <div className=" overflow-hidden h-[85%] sm:h-[300px]">
           <img

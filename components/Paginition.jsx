@@ -20,7 +20,7 @@ export default function pagination({ curentPage, lastPage }) {
     <Link
       onClick={scrollTop}
       className={
-        "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900 " +
+        "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900 " +
         (curentPage == 1 ? "cursor-not-allowed text-gray-500" : "")
       }
       key={lastPage + 1}
@@ -35,7 +35,7 @@ export default function pagination({ curentPage, lastPage }) {
         <Link
           onClick={scrollTop}
           className={
-            "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
+            "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
             (curentPage == i ? "bg-gray-700" : "bg-gray-900")
           }
           key={i}
@@ -52,7 +52,7 @@ export default function pagination({ curentPage, lastPage }) {
           <Link
             onClick={scrollTop}
             className={
-              "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
+              "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
@@ -66,7 +66,7 @@ export default function pagination({ curentPage, lastPage }) {
       pages.push(
         <Link
           onClick={scrollTop}
-          className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
+          className="px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={lastPage}
           to={searchParams("page", lastPage)}
         >
@@ -77,7 +77,7 @@ export default function pagination({ curentPage, lastPage }) {
       pages.push(
         <Link
           onClick={scrollTop}
-          className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
+          className="px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={1}
           to={searchParams("page", 1)}
         >
@@ -90,7 +90,7 @@ export default function pagination({ curentPage, lastPage }) {
           <Link
             onClick={scrollTop}
             className={
-              "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
+              "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
@@ -104,7 +104,7 @@ export default function pagination({ curentPage, lastPage }) {
       pages.push(
         <Link
           onClick={scrollTop}
-          className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
+          className="px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={lastPage}
           to={searchParams("page", lastPage)}
         >
@@ -115,7 +115,7 @@ export default function pagination({ curentPage, lastPage }) {
       pages.push(
         <Link
           onClick={scrollTop}
-          className="px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
+          className="px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900"
           key={1}
           to={searchParams("page", 1)}
         >
@@ -128,7 +128,7 @@ export default function pagination({ curentPage, lastPage }) {
           <Link
             onClick={scrollTop}
             className={
-              "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
+              "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base  " +
               (curentPage == i ? "bg-gray-700" : "bg-gray-900")
             }
             key={i}
@@ -144,7 +144,7 @@ export default function pagination({ curentPage, lastPage }) {
     <Link
       onClick={scrollTop}
       className={
-        "px-2.5 py-2 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900 " +
+        "px-2.5 py-2 hover:bg-gray-700 transition-all ease-in-out duration-150 md:px-4 md:py-3 rounded-md text-sm sm:text-base bg-gray-900 " +
         (curentPage == lastPage ? "cursor-not-allowed text-gray-500" : "")
       }
       key={lastPage + 2}

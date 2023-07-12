@@ -38,7 +38,7 @@ export default function Season() {
     return card;
   }
   return (
-    <div className="text-white mt-10">
+    <div className="text-gray-400 mt-10">
       <Suspense
         fallback={
           <h1 className="text-lg md:text-xl font-bold px-5 md:px-10">
@@ -58,7 +58,7 @@ export default function Season() {
           )}
         </Await>
       </Suspense>
-      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-white">
+      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-gray-400">
         <Suspense fallback={CardsSkeleton}>
           <Await resolve={data.seasonData}>{Cards}</Await>
         </Suspense>

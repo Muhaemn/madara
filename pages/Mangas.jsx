@@ -58,7 +58,7 @@ export default function Mangas() {
     return card;
   }
   return (
-    <div className="text-white mt-10">
+    <div className="text-gray-400 mt-10">
       <div className="px-5 md:px-10 flex justify-between flex-col md:flex-row items-stretch gap-5 mb-4">
         <Filter title="type" from="mangas" filterData={typeData} />
         <Filter title="status" from="mangas" filterData={statusData} />
@@ -93,7 +93,7 @@ export default function Mangas() {
           )}
         </Await>
       </Suspense>
-      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-white">
+      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-gray-400">
         <Suspense fallback={CardsSkeleton}>
           <Await resolve={data.mangaData}>{Cards}</Await>
         </Suspense>

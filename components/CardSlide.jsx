@@ -27,7 +27,7 @@ export default function cardSlide({ data, title, to }) {
     );
   });
   return (
-    <div className=" text-white">
+    <div className=" text-gray-400">
       <div className="flex items-center justify-between mb-5 text-lg">
         <h1 className="text-xl font-bold">{title}</h1>
         <div className="flex justify-between gap-1 items-center">
@@ -65,7 +65,7 @@ export default function cardSlide({ data, title, to }) {
             activePageIndex == 0
               ? "hidden"
               : "" +
-                "text-white text-2xl absolute top-0 h-full bg-gradient-to-l from-transparent to-gray-950 w-[60px] md:w-[100px]"
+                "text-gray-400 text-2xl absolute top-0 h-full bg-gradient-to-l from-transparent to-gray-950 w-[60px] md:w-[100px]"
           }
           onClick={() =>
             activePageIndex == 0 ? goTo(pages.length - 1) : prev()
@@ -92,7 +92,7 @@ export default function cardSlide({ data, title, to }) {
             activePageIndex == pages.length - 1
               ? "hidden"
               : "" +
-                "text-white flex flex-row-reverse items-center text-2xl absolute top-0 right-0 h-full bg-gradient-to-r from-transparent to-gray-950 w-[60px] md:w-[100px]"
+                "text-gray-400 flex flex-row-reverse items-center text-2xl absolute top-0 right-0 h-full bg-gradient-to-r from-transparent to-gray-950 w-[60px] md:w-[100px]"
           }
           onClick={() =>
             activePageIndex + 1 == pages.length ? goTo(0) : next()
@@ -113,7 +113,7 @@ export default function cardSlide({ data, title, to }) {
             />
           </svg>
         </button>
-        <div className="text-white text-center mt-4 text-sm">
+        <div className="text-gray-400 text-center mt-4 text-sm">
           {activePageIndex + 1} / {pages.length}
         </div>
       </div>

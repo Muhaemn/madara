@@ -12,7 +12,7 @@ export default function AnimeDetails() {
           alt="img"
         />
       </div>
-      <div className="p-10 text-white">
+      <div className="p-10 text-gray-400">
         <div className="flex justify-between items-center gap-5 flex-col md:flex-row-reverse">
           <div className="border-[5px] rounded-md border-gray-900">
             <img

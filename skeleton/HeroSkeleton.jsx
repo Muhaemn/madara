@@ -3,7 +3,7 @@ import loading from "../assets/loading.png";
 
 export default function Hero() {
   return (
-    <div className=" relative bg-gradient-to-b from-gray-900 to-gray-950 w-full min-h-[300px] rounded-md overflow-hidden flex items-center  text-white gap-5 justify-between flex-col md:flex-row md:bg-gradient-to-r border-2 border-gray-900">
+    <div className=" relative bg-gradient-to-b from-gray-900 to-gray-950 w-full min-h-[300px] rounded-md overflow-hidden flex items-center  text-gray-400 gap-5 justify-between flex-col md:flex-row md:bg-gradient-to-r border-2 border-gray-900">
       <img
         className="rounded-md absolute opacity-50 w-full md:w-auto object-contain overflow-hidden"
         src={loading}

@@ -62,7 +62,7 @@ export default function Animes() {
     return card;
   }
   return (
-    <div className="text-white mt-10">
+    <div className="text-gray-400 mt-10">
       <div className="px-5 md:px-10 flex justify-between flex-col md:flex-row items-stretch gap-5 mb-4">
         <Filter title="type" filterData={typeData} />
         <Filter title="status" filterData={statusData} />
@@ -92,7 +92,7 @@ export default function Animes() {
           )}
         </Await>
       </Suspense>
-      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-white">
+      <div className="p-5 md:p-10 flex flex-wrap justify-between gap-3 md:gap-5 text-gray-400">
         <Suspense fallback={CardsSkeleton}>
           <Await resolve={data.animeData}>{Cards}</Await>
         </Suspense>

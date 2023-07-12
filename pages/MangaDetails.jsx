@@ -38,7 +38,7 @@ export default function MangaDetails() {
             <div className="w-full h-10 bg-gradient-to-b absolute z-[-9] bottom-0   from-transparent to-gray-950"></div>
           </div>
         </div>
-        <div className="p-5 md:p-10 text-white">
+        <div className="p-5 md:p-10 text-gray-400">
           <div className="flex justify-between items-center gap-5 flex-col md:flex-row-reverse">
             <div className="border-[5px] rounded-md border-gray-900">
               <img
@@ -89,7 +89,7 @@ export default function MangaDetails() {
               </h1>
               <a
                 href={animeDetail.url}
-                className="bg-[#2D4E9D]  rounded-md px-5 py-3 text-center font-bold "
+                className="bg-[#2D4E9D] text-white rounded-md px-5 py-3 text-center font-bold "
                 target="_blanck"
               >
                 See On MAL
