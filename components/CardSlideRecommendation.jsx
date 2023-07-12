@@ -94,7 +94,7 @@ export default function cardSlide({ data, title, to }) {
             />
           </svg>
         </button>
-        <div className="text-white text-center mt-4">
+        <div className="text-white text-center mt-4 text-sm">
           {activePageIndex + 1} / {pages.length}
         </div>
       </div>

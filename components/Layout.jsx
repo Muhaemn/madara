@@ -114,7 +114,7 @@ export default function Layout() {
       </nav>
       <Outlet />
       <footer className=" w-full  px-5 md:px-10  text-white">
-        <div className=" flex justify-center items-center rounded-t-md w-full p-3 gap-5 bg-gray-900 ">
+        <div className=" flex justify-center items-center rounded-t-md w-full p-3 gap-2 bg-gray-900 ">
           <code className="text-xs font-bold text-gray-500 sm:text-base">
             Developed by Muhaemn
           </code>
@@ -126,8 +126,8 @@ export default function Layout() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
+              width="13"
+              height="13"
               fill="currentColor"
               className="bi bi-instagram"
               viewBox="0 0 16 16"
@@ -148,8 +148,8 @@ export default function Layout() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon icon-tabler icon-tabler-brand-github"
-              width="22"
-              height="22"
+              width="17"
+              height="17"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="#6b7280"
