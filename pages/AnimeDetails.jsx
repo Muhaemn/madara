@@ -53,34 +53,34 @@ export default function AnimeDetails() {
                   ? animeDetail.title_english
                   : animeDetail.title}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Type:</span> {animeDetail.type}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Source:</span>{" "}
                 {animeDetail.source ? animeDetail.source : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Status:</span>{" "}
                 {animeDetail.status ? animeDetail.status : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Episodes:</span>{" "}
                 {animeDetail.episodes ? animeDetail.episodes : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Aired:</span>{" "}
                 {animeDetail.aired.string ? animeDetail.aired.string : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Duration:</span>{" "}
                 {animeDetail.duration ? animeDetail.duration : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Rating:</span>{" "}
                 {animeDetail.rating ? animeDetail.rating : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Score:</span>{" "}
                 {animeDetail.score
                   ? animeDetail.score +
@@ -89,7 +89,7 @@ export default function AnimeDetails() {
                     " Voiting"
                   : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Genres:</span>{" "}
                 {genre(animeDetail.genres) ? genre(animeDetail.genres) : "N/A"}
               </h1>
@@ -104,7 +104,7 @@ export default function AnimeDetails() {
           </div>
           <div className="w-full mt-10">
             <h1 className="font-bold text-2xl sm:text-3xl my-5">About</h1>
-            <h1 className="text-lg tracking-wider">{animeDetail.synopsis}</h1>
+            <h1 className="text-lg">{animeDetail.synopsis}</h1>
           </div>
           <div className="flex justify-center flex-col items-center mt-10">
             <h1 className="font-bold text-2xl sm:text-3xl my-5 self-start">
