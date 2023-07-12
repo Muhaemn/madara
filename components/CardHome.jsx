@@ -21,8 +21,8 @@ export default function Card({ img, title, score, type }) {
           {title}
         </h3>
         <div className="flex justify-between mt-2">
-          <h3 className="px-3 text-sm ">{type}</h3>
-          <h3 className="px-3 text-sm ">
+          <h3 className="px-3 text-sm  font-bold ">{type}</h3>
+          <h3 className="px-3 text-sm  font-bold ">
             {score ? Math.round(score * 10) / 10 + "/10" : ""}
           </h3>
         </div>
