@@ -38,7 +38,7 @@ export default function AnimeDetails() {
             <div className="w-full h-10 bg-gradient-to-b absolute z-[-9] bottom-0   from-transparent to-gray-950"></div>
           </div>
         </div>
-        <div className="p-10 text-white">
+        <div className="p-5 md:p-10 text-white">
           <div className="flex justify-between items-center gap-5 flex-col md:flex-row-reverse">
             <div className="border-[5px] rounded-md border-gray-900">
               <img
@@ -141,7 +141,7 @@ export default function AnimeDetails() {
               return "";
             }
             return (
-              <div className="p-10">
+              <div className="p-5 md:p-10">
                 <CardSlide
                   data={data}
                   title="Recommendations"
