@@ -53,28 +53,28 @@ export default function MangaDetails() {
                   ? animeDetail.title_english
                   : animeDetail.title}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Type:</span> {animeDetail.type}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Chapters:</span>{" "}
                 {animeDetail.chapters ? animeDetail.chapters : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Volums:</span>{" "}
                 {animeDetail.volumes ? animeDetail.volumes : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Status:</span>{" "}
                 {animeDetail.status ? animeDetail.status : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Publishid:</span>{" "}
                 {animeDetail.published.string
                   ? animeDetail.published.string
                   : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Score:</span>{" "}
                 {animeDetail.score
                   ? animeDetail.score +
@@ -83,7 +83,7 @@ export default function MangaDetails() {
                     " Voiting"
                   : "N/A"}
               </h1>
-              <h1 className="text-lg tracking-wider">
+              <h1 className="text-lg">
                 <span className="font-bold">Genres:</span>{" "}
                 {genre(animeDetail.genres) ? genre(animeDetail.genres) : "N/A"}
               </h1>
@@ -98,7 +98,7 @@ export default function MangaDetails() {
           </div>
           <div className="w-full mt-10">
             <h1 className="font-bold text-2xl sm:text-3xl my-5">About</h1>
-            <h1 className="text-lg tracking-wider">{animeDetail.synopsis}</h1>
+            <h1 className="text-lg">{animeDetail.synopsis}</h1>
           </div>
         </div>
       </>
