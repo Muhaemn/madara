@@ -85,7 +85,7 @@ export default function Layout() {
                   return e.target.value != "/" ? e.target.value : prev;
                 })
               }
-              className="py-2 text-md w-full text-gray-400 min-w-[320px] md:min-w-full bg-gray-900 rounded-md px-10 focus:outline-none"
+              className="py-2 text-md focus:bg-gray-800 transition-all ease-in-out duration-200 w-full text-gray-400 min-w-[320px] md:min-w-full bg-gray-900 rounded-md px-10 outline-none focus:outline-none"
               placeholder="press / to focus"
               autoComplete="off"
             />
