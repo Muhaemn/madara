@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export default function Example() {
+export default function Error() {
   return (
     <>
       <main className="bg-gray-950 flex justify-center items-center h-[83vh] ">

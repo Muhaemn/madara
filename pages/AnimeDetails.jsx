@@ -97,7 +97,7 @@ export default function AnimeDetails() {
               </h1>
               <a
                 href={animeDetail.url}
-                className="bg-[#2D4E9D] text-white inline-block rounded-md px-5 py-3 text-center font-bold "
+                className="bg-[#2D4E9D] z-50 text-white inline-block rounded-md px-5 py-3 text-center font-bold "
                 target="_blanck"
               >
                 See On MAL
